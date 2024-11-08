@@ -11,6 +11,15 @@ document.querySelectorAll('.continue').forEach((button) => {
     });
 });
 
+//
+document.querySelectorAll('.card .guide').forEach(button => {
+    button.addEventListener('click', function() {
+        const lang = this.closest('.card').dataset.lang;
+        alert(`Showing guide for ${lang}`);
+        // Thêm logic để mở hướng dẫn
+    });
+});
+
 // Xử lý khi click vào liên kết "Click here to open the Java (JUnit) IDE"
 document.getElementById('open-edit-challenge').addEventListener('click', () => {
     // Ẩn challenge-section
