@@ -1,0 +1,191 @@
+/* Cấu trúc chung */
+body {
+    background-color: #1c1c1c; /* Nền tối làm nổi bật nội dung */
+    font-family: 'Roboto', sans-serif; /* Phông chữ hiện đại */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column; /* Đảm bảo trung tâm cả trang */
+}
+
+/* Phần challenge-section */
+.challenge-section, .edit-challenge-section {
+    background-color: #1e2a3a; /* Nền tối xanh đậm để nổi bật */
+    padding: 50px 30px; /* Khoảng cách nội dung */
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 1000px;
+    margin-top: 50px; /* Khoảng cách trên */
+    margin-bottom: 50px; /* Khoảng cách dưới */
+    text-align: center;
+}
+
+/* Phần form-container ẩn ban đầu */
+.form-container {
+    display: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Tiêu đề */
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #ff4b5c, #ff9468); /* Màu gradient đẹp mắt */
+    border-radius: 12px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Card Container (Hiển thị thẻ trong dạng grid) */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Card (Cải tiến card cho đẹp mắt, xịn xò hơn) */
+.card {
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Thẻ nâng lên khi hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Tăng bóng đổ khi hover */
+}
+
+.card img {
+    height: 80px;
+    width: 80px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover img {
+    transform: scale(1.1); /* Hiệu ứng phóng to ảnh khi hover */
+}
+
+.name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.name span {
+    font-size: 14px;
+    color: #999;
+}
+
+.description {
+    /* font-size: 14px; */
+    /* color: #666; */
+    /* margin-bottom: 20px; */
+    color: #777;
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: #1F2833;
+}
+
+.continue {
+    background-color: #28a745; /* Màu xanh lá cây */
+    color: white;
+}
+
+.guide {
+    background-color: #007bff; /* Màu xanh dương */
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+/* Media Queries cho mobile */
+@media screen and (max-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* Hai cột trên tablet */
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* Hai cột trên màn hình vừa */
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    button {
+        width: 100%; /* Nút full chiều rộng trên màn hình nhỏ */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card-container {
+        grid-template-columns: 1fr; /* Một cột trên điện thoại */
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+    }
+}
