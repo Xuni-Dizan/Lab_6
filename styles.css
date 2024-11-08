@@ -13,20 +13,192 @@ body {
 
 /* Phần challenge-section */
 .challenge-section, .edit-challenge-section {
-    background-color: #1e2a3a; /* Nền tối xanh đậm để nổi bật */
-    padding: 50px 30px; /* Khoảng cách nội dung */
+    background-color: #2C3E50; 
+    padding: 50px 30px; 
     border-radius: 25px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    max-width: 1000px;
+    width: 80%;
+    max-width: 900px;
     margin-top: 50px; /* Khoảng cách trên */
     margin-bottom: 50px; /* Khoảng cách dưới */
     text-align: center;
+    transition: background-color 0.3s ease;
 }
+
+/* Modal content */
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.modal-content .input-group {
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.modal-content input, .modal-content select, .modal-content textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    /* transition: all 0.3s ease; */
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.modal-content input:focus, .modal-content select:focus, .modal-content textarea:focus {
+    border-color: #ff4b5c;
+    outline: none;
+    background-color: #fff;
+}
+
+.modal-footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.modal-footer .btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    background-color: #1f2833;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-footer .btn:hover {
+    background-color: #1F2833;
+}
+
+.footer-note {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #7f8c8d;
+  }
+.footer-note::before {
+    content: "✓";
+    color: green;
+    margin-right: 8px;
+}
+.footer-note span {
+    margin-left: 8px;
+}
+  .output-section {
+    border-top: 1px solid #dee2e6;
+    padding-top: 16px;
+  }
+  .output-section h3 {
+    font-size: 1em;
+    font-weight: bold;
+    color: #495057;
+    margin-bottom: 8px;
+  }
+  .output-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .output-group input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.875em;
+    margin-right: 8px;
+  }
+  .output-group span {
+    width: 40px;
+    padding: 10px;
+    text-align: center;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.875em;
+    color: #495057;
+  }
 
 /* Phần form-container ẩn ban đầu */
 .form-container {
     display: none;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: center;
+
+}
+
+.form-container input, .form-container select, .form-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    transition: all 0.3s ease;
+}
+
+.form-container input:focus, .form-container select:focus, .form-container textarea:focus {
+    border-color: #ff4b5c;
+    outline: none;
+    background-color: #fff;
+}
+
+.form-container button {
+    padding: 12px 30px;
+    font-size: 16px;
+    background-color: #1F2833;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #2C3E50;
+}
+
+.form-container select, .form-container textarea {
+    width: 100%;
+    max-width: 100%;
+}
+
+.modal-footer .btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-footer .btn:hover {
+    background-color: #218838;
 }
 
 .hidden {
@@ -50,7 +222,8 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    margin-top: 20px;
+    margin-top: 30px;
+    transition: all 0.3s ease;
 }
 
 /* Card (Cải tiến card cho đẹp mắt, xịn xò hơn) */
@@ -59,36 +232,36 @@ h1 {
     border-radius: 20px;
     overflow: hidden;
     padding: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-10px); /* Thẻ nâng lên khi hover */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Tăng bóng đổ khi hover */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Tăng bóng đổ khi hover */
 }
 
 .card img {
-    height: 80px;
-    width: 80px;
+    height: 90px;
+    width: 90px;
     margin-bottom: 15px;
     transition: transform 0.3s ease-in-out;
 }
 
 .card:hover img {
-    transform: scale(1.1); /* Hiệu ứng phóng to ảnh khi hover */
+    transform: scale(1.15); /* Hiệu ứng phóng to ảnh khi hover */
 }
 
 .name {
     font-size: 18px;
     font-weight: bold;
-    color: #333;
+    color: #1F2833;
     margin-bottom: 5px;
 }
 
 .name span {
     font-size: 14px;
-    color: #999;
+    color: #BDC3C7;
 }
 
 .description {
@@ -103,7 +276,7 @@ h1 {
 .button-container {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 button {
@@ -111,9 +284,9 @@ button {
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 14px;
-    font-weight: 600;
+    transition: transform 0.3s ease;
+    /* font-size: 14px; */
+    font-weight: bold;
 }
 
 button:hover {
@@ -131,12 +304,12 @@ button:hover {
 }
 
 button:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
+    opacity: 0.8;
+    transform: translateY(-3px);
 }
 
 button:active {
-    transform: translateY(2px);
+    transform: translateY(3px);
 }
 
 /* Media Queries cho mobile */
@@ -166,7 +339,12 @@ button:active {
     }
 
     button {
-        width: 100%; /* Nút full chiều rộng trên màn hình nhỏ */
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .form-container{
+        width: auto;
     }
 }
 
@@ -187,5 +365,8 @@ button:active {
     button {
         width: 100%;
         padding: 15px;
+    }
+    .form-container{
+        width: auto;
     }
 }
