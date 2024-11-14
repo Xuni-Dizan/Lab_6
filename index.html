@@ -66,6 +66,7 @@
             </div>
         </div>
         <div class="form-container" id="form-container" style="display:none;">
+          <button class="close-btn" id="close-form-container">X</button>
             <input type="text" placeholder="Demo" id="challenge-title">
             <select id="difficulty">
                 <option>Easy</option>
@@ -78,23 +79,8 @@
     </section>
     <!-- Edit Challenge Section (Ẩn mặc định) -->
     <section class="edit-challenge-section " id="edit-challenge-section" style="display:none;">
+      <button class="close-btn" id="close-edit-challenge">X</button>
         <h1>Edit custom challenge</h1>
-        <!-- <div class="form-container-edit">
-            <input type="text" placeholder="DSA ET Opt7 01" id="edit-challenge-title">
-            <select id="edit-difficulty">
-                <option>Easy</option>
-                <option>Medium</option>
-                <option>Hard</option>
-            </select>
-            <textarea placeholder="This is a private challenge..."></textarea>
-            <div class="code-editor">
-                <h2>Write a program to count odd numbers in array:</h2>
-                <textarea rows="8" cols="50">Write your code here...</textarea>
-                <h3>Test cases:</h3>
-                <textarea rows="5" cols="50">Test cases input...</textarea>
-            </div>
-            <button id="back-to-challenge">Update custom challenge</button>
-        </div> -->
         <div class="modal-content">
             <div class="input-group">
               <label for="title">Title</label>
@@ -162,7 +148,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button class="btn">Update custom challenge</button>
+            <button class="btn" id="btn">Update custom challenge</button>
           </div>
     </section>
     <script src="script.js"></script>

@@ -61,7 +61,7 @@ body {
 }
 
 .modal-content input:focus, .modal-content select:focus, .modal-content textarea:focus {
-    border-color: #ff4b5c;
+    border-color: #1f2833;
     outline: none;
     background-color: #fff;
 }
@@ -139,7 +139,7 @@ body {
 .form-container {
     display: none;
     background-color: #fff;
-    padding: 30px;
+    padding: 50px;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -161,7 +161,7 @@ body {
 }
 
 .form-container input:focus, .form-container select:focus, .form-container textarea:focus {
-    border-color: #ff4b5c;
+    border-color: #1F2833;
     outline: none;
     background-color: #fff;
 }
@@ -189,7 +189,7 @@ body {
 .modal-footer .btn {
     padding: 12px 30px;
     font-size: 16px;
-    background-color: #28a745;
+    background-color: #1f2833;
     color: white;
     border: none;
     border-radius: 25px;
@@ -198,12 +198,12 @@ body {
 }
 
 .modal-footer .btn:hover {
-    background-color: #218838;
+    background-color: #777;
 }
 
-.hidden {
+/* .hidden {
     display: none !important;
-}
+} */
 
 /* Tiêu đề */
 h1 {
@@ -212,7 +212,7 @@ h1 {
     color: #fff;
     margin-bottom: 30px;
     padding: 20px;
-    background: linear-gradient(135deg, #ff4b5c, #ff9468); /* Màu gradient đẹp mắt */
+    background: linear-gradient(135deg, #1f2833, #1c1c1c); /* Màu gradient đẹp mắt */
     border-radius: 12px;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
@@ -312,6 +312,33 @@ button:active {
     transform: translateY(3px);
 }
 
+/* Nút X tối giản */
+.close-btn {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    background: none;
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.close-btn:hover {
+    opacity: 0.7;
+}
+
+.close-btn:focus {
+    outline: none;
+}
+
+/* Đảm bảo cả edit-challenge-section và form-container đều có position: relative để nút X nằm trên */
+.edit-challenge-section, .form-container {
+    position: relative;
+}
+
+
 /* Media Queries cho mobile */
 @media screen and (max-width: 1024px) {
     .card-container {
@@ -345,6 +372,26 @@ button:active {
 
     .form-container{
         width: auto;
+    }
+    .close-btn{
+        display: flex;
+        /* left: 315px; */
+    }
+    #close-form-container{
+        position: relative;
+        padding: 10px 30px 10px 20px;
+        width: 10px;
+        top: -50px;
+        left: 200px;
+        /* right: 300px; */
+    }
+    /* #challenge-title #difficulty #open-edit-challenge {
+        position: relative;
+        top: -100px;
+    } */
+    .form-container .close-btn{
+        width: 30px;
+        right: 100px;
     }
 }
 
